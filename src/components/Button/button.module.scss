@@ -1,0 +1,26 @@
+/* styles/Button.module.scss */
+
+.button {
+    border: none;
+    border-radius: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+  
+    &.primary {
+      background-color: var(--primary);
+      color: white;
+    }
+  
+    &.secondary {
+      background-color: var(--secondary-bg, gray);
+      color: var(--secondary-text, black);
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 3px 2px var(--focus-color, lightblue);
+    }
+  }
+  
