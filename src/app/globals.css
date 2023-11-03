@@ -2,7 +2,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
   height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: var(--primary-text);
+  background-color: var(--background);
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary);
+  &:active {
+    color: var(--primary);
+  };
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 :root {
@@ -21,7 +40,7 @@
   --primary: #6BD697;
   --background: black;
   --secondary: #0F083E;
-  --primary-text: #0F083E;
+  --primary-text: white;
   --secondary-bg: white;
   --secondary-text: black;
   --focus-color: lightblue;
