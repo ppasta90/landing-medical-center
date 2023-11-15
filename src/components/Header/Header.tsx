@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ isOpen, toggleDrawer }) => {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Link href="/">
-          <Image src="/logo.svg" alt="Your Logo" width={80} height={80} />
+          <Image src="/logo.svg" alt="Your Logo" width={120} height={120} />
         </Link>
       </div>
       {!isMobile && (
