@@ -10,6 +10,7 @@ import ServicesCard from "@/components/Cards/ServicesCard";
 import InfoCard from "@/components/Cards/InfoCard";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
+import Map from "@/components/Map";
 
 type Specialization = {
   title: string;
@@ -166,6 +167,15 @@ const LocationSection = () => {
           </button>
           <p>Come raggiungerci</p>
         </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2874.793570456051!2d11.01097547535706!3d43.901541971091454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132af51c952e35ff%3A0x9f40d897e8d92b8e!2sVia%20Michelangelo%20Buonarroti%2C%203%2C%2051031%20Agliana%20PT!5e0!3m2!1sit!2sit!4v1700825573878!5m2!1sit!2sit"
+          width="100%"
+          height="450"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          style={{ border: 0 }}
+        ></iframe>
       </div>
     </div>
   );
