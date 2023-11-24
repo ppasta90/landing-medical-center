@@ -1,13 +1,15 @@
 .main {
   display: flex;
   flex-direction: column;
-} 
+}
+
 .servicesContainer {
   display: flex;
   flex-direction: column;
   background-color: var(--background);
   position: relative;
   padding-top: 2rem;
+
   p:first-child {
     color: #212529;
     text-align: center;
@@ -19,6 +21,7 @@
     text-align: center;
   }
 }
+
 .iconTextContainer {
   display: inline-flex;
   align-items: center;
@@ -26,26 +29,31 @@
   gap: 0.2rem;
   color: #212529;
 }
+
 .iconTextContainerLeftAligned {
   @extend .iconTextContainer;
   justify-content: flex-start;
 }
+
 .goToSpecialArrowButton {
   background: transparent;
   border: none;
   display: grid;
   place-content: center;
 }
+
 .imageContainer {
   width: 70%;
   margin: auto;
   padding-bottom: 12rem;
 }
+
 .ctaButtonContainer {
   display: flex;
   justify-content: center;
   margin-block: 2rem;
 }
+
 .goToSpecial {
   display: flex;
   justify-content: center;
@@ -53,19 +61,25 @@
   gap: 0.5rem;
   font-weight: bolder;
 }
+
 .servicesCardContainer {
   position: absolute;
   bottom: -14rem;
   z-index: 2;
   width: 100%;
 }
-.sectionContainerBlue {
+
+.sectionContainer {
   display: flex;
   flex-direction: column;
-  background-color: var(--secondary);
   position: relative;
   padding: 18rem 0 5rem 0;
-  
+}
+
+.sectionContainerBlue {
+  @extend .sectionContainer;
+  background-color: var(--secondary);
+
   .sectionHeading {
     width: 90%;
     margin: auto;
@@ -74,24 +88,29 @@
     flex-direction: column;
     gap: 1rem;
     padding-bottom: 2rem;
+
     h2 {
       font-weight: bolder;
       color: var(--primary);
     }
+
     h3 {
       font-weight: bolder;
       margin-top: 0.5rem;
       font-size: 2rem;
     }
+
     p {
       font-weight: 400;
     }
-  }  
+  }
 }
+
 .sectionContainerWhite {
   @extend .sectionContainerBlue;
   background-color: #fff;
 }
+
 .sectionContainerGreen {
   @extend .sectionContainerBlue;
   background-color: var(--background);
@@ -105,7 +124,8 @@
   @extend .sectionSubtitle;
   color: black;
 }
-.infoCardContainer{
+
+.infoCardContainer {
   width: 90%;
   margin: auto;
   gap: 1rem;
