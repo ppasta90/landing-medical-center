@@ -9,6 +9,8 @@ import { FiArrowDownCircle } from "react-icons/fi";
 import Image from "next/image";
 import ServicesCard from "@/components/Cards/ServicesCard";
 import InfoCard from "@/components/Cards/InfoCard";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { MdOpenInNew } from "react-icons/md";
 
 // export to a data folder and import it here
 // take description from bard ai
@@ -72,7 +74,7 @@ function Home() {
             type="primary"
           />
         </div>
-        <div className={styles.goToSpecial}>
+        <div className={styles.iconTextContainer}>
           <button className={styles.goToSpecialArrowButton}>
             <FiArrowDownCircle
               size={20}
@@ -95,12 +97,10 @@ function Home() {
         </div>
       </div>
       {/* AREE SPECIALISTICHE */}
-      <div className={styles.specializationsContainer}>
-        <div className={styles.specializationsHeading}>
-          <h2 className={styles.specializationsTitle}>Aree specialistiche</h2>
-          <h3 className={styles.specializationsSubtitle}>
-            Cosa stai cercando?
-          </h3>
+      <div className={styles.sectionContainerBlue}>
+        <div className={styles.sectionHeading}>
+          <h2 className={styles.sectionTitle}>Aree specialistiche</h2>
+          <h3 className={styles.sectionSubtitle}>Cosa stai cercando?</h3>
           <p>
             Qui trovi tutte le nostre specializzazioni con i rispettivi medici
             di riferimento
@@ -117,7 +117,72 @@ function Home() {
         </div>
       </div>
       {/* DOVE SIAMO */}
+      <div
+        className={styles.sectionContainerWhite}
+        style={{ paddingTop: "2rem" }}
+      >
+        <div className={styles.sectionHeading}>
+          <h2 className={styles.sectionTitle}>Dove siamo</h2>
+          <h3 className={styles.sectionSubtitleLightBackground}>
+            Vuoi raggiungere il poliambulatorio?
+          </h3>
+
+          <div className={styles.iconTextContainerLeftAligned}>
+            <button className={styles.goToSpecialArrowButton}>
+              <FaMapMarkerAlt size={20} style={{ color: "var(--secondary)" }} />
+            </button>
+            <p>Via Buonarroti 3, Agliana, Pistoia</p>
+          </div>
+
+          <div className={styles.iconTextContainerLeftAligned}>
+            <button className={styles.goToSpecialArrowButton}>
+              <MdOpenInNew size={20} style={{ color: "var(--secondary)" }} />
+            </button>
+            <p>Come raggiungerci</p>
+          </div>
+        </div>
+      </div>
       {/* CONTATTI */}
+      <div
+        className={styles.sectionContainerGreen}
+        style={{ paddingTop: "2rem" }}
+      >
+        <div className={styles.sectionHeading}>
+          <h2 className={styles.sectionTitle}>Contatti</h2>
+          <h3 className={styles.sectionSubtitleLightBackground}>
+            Hai bisogno di informazioni o vuoi prenotare?
+          </h3>
+
+          <div className={styles.iconTextContainerLeftAligned}>
+            <button className={styles.goToSpecialArrowButton}>
+              <FaMapMarkerAlt size={20} style={{ color: "var(--secondary)" }} />
+            </button>
+            <p>contatti@poliagliana.com</p>
+          </div>
+
+          <div className={styles.iconTextContainerLeftAligned}>
+            <button className={styles.goToSpecialArrowButton}>
+              <MdOpenInNew size={20} style={{ color: "var(--secondary)" }} />
+            </button>
+            <p>331222675</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ */}
+      <div
+        className={styles.sectionContainerBlue}
+        style={{ paddingTop: "2rem" }}
+      >
+        <div className={styles.sectionHeading}>
+          <h2 className={styles.sectionTitle}>FAQ</h2>
+          <h3 className={styles.sectionSubtitle}>Hai qualche dubbio?</h3>
+
+          <p>Qui trovi tutte le nostre risposte alle domande piu frequenti</p>
+
+          {/* accordions */}
+        </div>
+      </div>
     </main>
   );
 }

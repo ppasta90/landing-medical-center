@@ -19,9 +19,16 @@
     text-align: center;
   }
 }
-.goToSpecial {
+.iconTextContainer {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  color: #212529;
+}
+.iconTextContainerLeftAligned {
+  @extend .iconTextContainer;
+  justify-content: flex-start;
 }
 .goToSpecialArrowButton {
   background: transparent;
@@ -52,14 +59,14 @@
   z-index: 2;
   width: 100%;
 }
-.specializationsContainer {
+.sectionContainerBlue {
   display: flex;
   flex-direction: column;
   background-color: var(--secondary);
   position: relative;
   padding: 18rem 0 5rem 0;
   
-  .specializationsHeading {
+  .sectionHeading {
     width: 90%;
     margin: auto;
     color: #fff;
@@ -75,14 +82,28 @@
       font-weight: bolder;
       margin-top: 0.5rem;
       font-size: 2rem;
-
     }
     p {
       font-weight: 400;
     }
-  }
+  }  
+}
+.sectionContainerWhite {
+  @extend .sectionContainerBlue;
+  background-color: #fff;
+}
+.sectionContainerGreen {
+  @extend .sectionContainerBlue;
+  background-color: var(--background);
+}
 
-   
+.sectionSubtitle {
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitleLightBackground {
+  @extend .sectionSubtitle;
+  color: black;
 }
 .infoCardContainer{
   width: 90%;
