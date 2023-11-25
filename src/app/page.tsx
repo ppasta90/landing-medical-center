@@ -10,7 +10,7 @@ import ServicesCard from "@/components/Cards/ServicesCard";
 import InfoCard from "@/components/Cards/InfoCard";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
-import Map from "@/components/Map";
+import Footer from "../components/Footer";
 
 type Specialization = {
   title: string;
@@ -75,6 +75,8 @@ const Home = () => {
       <ContactSection />
 
       <FaqSection />
+
+      <Footer />
     </main>
   );
 };
