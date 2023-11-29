@@ -9,17 +9,16 @@ const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <div className={styles.innerContainer}>
-        <div className={styles.logoContainer}>
-          <Link href="/">
-            <Image
-              loading="lazy"
-              src="/logo.svg"
-              alt="Your Logo"
-              width={80}
-              height={80}
-            />
-          </Link>
-        </div>
+        <Link href="/">
+          <Image
+            loading="lazy"
+            src="/logo.svg"
+            alt="Your Logo"
+            width={80}
+            height={80}
+          />
+        </Link>
+
         <div className={styles.textContainer}>
           <p>©2023 Poliambulatorio Agliana.</p>
           <p>Tutti i diritti sono riservati</p>
