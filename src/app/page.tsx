@@ -11,6 +11,7 @@ import InfoCard from "@/components/Cards/InfoCard";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
 import Footer from "../components/Footer";
+import CustomAccordion from "@/components/Accordion";
 
 type Specialization = {
   title: string;
@@ -214,13 +215,39 @@ const ContactSection = () => {
 };
 
 const FaqSection = () => {
+  const faqs = [
+    {
+      title: "Come posso prenotare una visita?",
+      content:
+        "Puoi prenotare una visita tramite il nostro sito, oppure chiamando il numero 331222675",
+    },
+    {
+      title: "Come posso pagare una visita?",
+      content:
+        "Puoi pagare una visita tramite il nostro sito, oppure chiamando il numero 331222675",
+    },
+    {
+      title: "Come posso sapere il nome dei dottori disponibili?",
+      content:
+        "Puoi sapere il nome dei dottori disponibili tramite il nostro sito, oppure chiamando il numero 331222675",
+    },
+  ];
   return (
     <div className={styles.sectionContainerBlue} style={{ paddingTop: "2rem" }}>
       <div className={styles.sectionHeading}>
         <h2 className={styles.sectionTitle}>FAQ</h2>
         <h3 className={styles.sectionSubtitle}>Hai qualche dubbio?</h3>
         <p>Qui trovi tutte le nostre risposte alle domande più frequenti</p>
-        {/* accordions */}
+        <div className={styles.accordionContainer}>
+          {faqs.map((faq, index) => (
+            <CustomAccordion
+              key={faq.title}
+              title={faq.title}
+              content={faq.content}
+              value={index.toString()}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
