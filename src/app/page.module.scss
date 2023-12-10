@@ -13,12 +13,46 @@
   p:first-child {
     color: #212529;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 7vw, 5rem);
     margin-bottom: 1rem;
   }
 
   p:nth-child(2) {
     text-align: center;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .servicesContainerTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 1rem
+  }
+
+  .servicesContainerTitleTablet {
+    @extend .servicesContainerTitle;
+    margin-top: 5rem;
+  }
+
+  .titleAndImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .titleAndImageTablet {
+    display: flex;
+  }
+
+  @media screen and (min-width: 1280px) {
+    .titleAndImageTablet {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+    }
+    
   }
 }
 
@@ -45,7 +79,14 @@
 .imageContainer {
   width: 70%;
   margin: auto;
-  padding-bottom: 12rem;
+  padding-bottom: 10rem;
+}
+
+.imageContainerTablet {
+  @extend .imageContainer;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0;
 }
 
 .ctaButtonContainer {
@@ -104,11 +145,32 @@
       font-weight: 400;
     }
   }
+
+  .mapContainer {
+    width: 90%;
+    margin: auto;
+  }
 }
 
 .sectionContainerWhite {
   @extend .sectionContainerBlue;
   background-color: #fff;
+
+  .containerTablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+}
+
+.sectionContainerWhiteTablet {
+  @extend .sectionContainerWhite;
+  display: flex;
+  flex-direction: row;
+  //padding: 0 5rem 1rem 5rem;
 }
 
 .sectionContainerGreen {
@@ -131,4 +193,11 @@
   gap: 1rem;
   display: flex;
   flex-direction: column;
+}
+
+.infoCardContainerTablet {
+  @extend .infoCardContainer;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

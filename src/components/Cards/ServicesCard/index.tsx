@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./servicesCard.module.scss";
 import { IconCar, IconLuggage, IconPhone } from "@/icons";
+import { bebasNeue } from "@/app/fonts";
 
 const servicesList = [
   {
@@ -45,7 +46,7 @@ const ServicesCardItem = ({ icon, number, title }: ServicesCardItemProps) => {
     <div className={styles.itemContainer}>
       <div className={styles.itemIcon}>
         {icon}
-        <p className={styles.number}>{number}</p>
+        <p className={styles.number + " " + bebasNeue.className}>{number}</p>
       </div>
       <div className={styles.itemTitle}>{title}</div>
     </div>
