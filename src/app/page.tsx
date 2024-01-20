@@ -212,8 +212,8 @@ const LocationSection = () => {
             Dove siamo
           </h2>
           <h3 className={styles.sectionSubtitleLightBackground}>
-            Siamo ad Agliana, tra Prato e Pistoia, vicini all'uscita
-            dell'autostrada A11
+            Siamo ad Agliana, tra Prato e Pistoia, vicini all&apos;uscita
+            dell&apos;autostrada A11
           </h3>
           <div className={styles.iconTextContainerLeftAligned}>
             <button className={styles.goToSpecialArrowButton}>
