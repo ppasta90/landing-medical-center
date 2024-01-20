@@ -13,31 +13,34 @@ const Footer = () => {
           <Image
             loading="lazy"
             src="/logo.svg"
-            alt="Your Logo"
-            width={80}
-            height={80}
+            alt="logo"
+            width={100}
+            height={100}
           />
         </Link>
 
         <div className={styles.textContainer}>
-          <p>©2023 Poliambulatorio Agliana.</p>
-          <p>Tutti i diritti sono riservati</p>
+          <p>©2023 Centro Medico Agliana.</p>
+          <p>Partita IVA: 01393880479</p>
+          <a href="mailto: centromedicoagliana@pec.it">
+            PEC: centromedicoagliana@pec.it
+          </a>
         </div>
         <div className={styles.socialsContainer}>
           <a
-            href="https://www.facebook.com/poliambulatorioagliana"
+            href="https://www.facebook.com/studiomedicoagliana"
             target="_blank"
           >
             <FiFacebook size={25} />
           </a>
           <a
-            href="https://www.instagram.com/poliambulatorioagliana/"
+            href="https://www.instagram.com/centro-medico-agliana/"
             target="_blank"
           >
             <FaInstagram size={25} />
           </a>
           <a
-            href="https://www.linkedin.com/company/poliambulatorio-agliana-pastacaldi/"
+            href="https://www.linkedin.com/company/centro-medico-agliana/"
             target="_blank"
           >
             <FaLinkedin size={25} />

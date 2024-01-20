@@ -10,10 +10,11 @@ import Footer from "../components/Footer";
 import CustomAccordion from "@/components/Accordion";
 import Image from "next/image";
 import { FiArrowDownCircle } from "react-icons/fi";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMailBulk, FaMapMarkerAlt } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
 import { useMediaQuery } from "@/utils";
 import { bebasNeue } from "./fonts";
+import { FaPhone } from "react-icons/fa6";
 
 type Specialization = {
   title: string;
@@ -110,7 +111,13 @@ const ServicesContainer = () => {
         {!isTablet && (
           <>
             <div className={styles.ctaButtonContainer}>
-              <Button onClick={() => {}} title="PRENOTA" type="primary" />
+              <Button
+                onClick={() => {
+                  window.open("tel:0574027087");
+                }}
+                title="CHIAMA ORA"
+                type="primary"
+              />
             </div>
             <div className={styles.iconTextContainer}>
               <button className={styles.goToSpecialArrowButton}>
@@ -143,9 +150,9 @@ const ServicesContainer = () => {
           />
         </div>
       </div>
-      <div className={styles.servicesCardContainer}>
+      {/* <div className={styles.servicesCardContainer}>
         <ServicesCard />
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -157,7 +164,7 @@ const Specializations = ({
 }) => {
   const isTablet = useMediaQuery("(min-width: 768px)");
   return (
-    <div className={styles.sectionContainerBlue}>
+    <div id="specializations" className={styles.sectionContainerBlue}>
       <div className={styles.sectionHeading}>
         <h2 className={styles.sectionTitle + " " + bebasNeue.className}>
           Aree specialistiche
@@ -187,8 +194,11 @@ const Specializations = ({
 
 const LocationSection = () => {
   const isTablet = useMediaQuery("(min-width: 768px)");
+  const locationUrl =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2874.793570456051!2d11.01097547535706!3d43.901541971091454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132af51c952e35ff%3A0x9f40d897e8d92b8e!2sVia%20Michelangelo%20Buonarroti%2C%203%2C%2051031%20Agliana%20PT!5e0!3m2!1sit!2sit!4v1700825573878!5m2!1sit!2sit";
   return (
     <div
+      id="where"
       className={
         isTablet
           ? styles.sectionContainerWhiteTablet
@@ -202,16 +212,26 @@ const LocationSection = () => {
             Dove siamo
           </h2>
           <h3 className={styles.sectionSubtitleLightBackground}>
-            Vuoi raggiungere il poliambulatorio?
+            Siamo ad Agliana, tra Prato e Pistoia, vicini all'uscita
+            dell'autostrada A11
           </h3>
           <div className={styles.iconTextContainerLeftAligned}>
             <button className={styles.goToSpecialArrowButton}>
               <FaMapMarkerAlt size={20} style={{ color: "var(--secondary)" }} />
             </button>
-            <p>Via Buonarroti 3, Agliana, Pistoia</p>
+            <p>
+              Via Michelagelo Buonarroti angolo via Selvaggia Vergiolesi,
+              s.n.c., Agliana
+            </p>
           </div>
           <div className={styles.iconTextContainerLeftAligned}>
-            <button className={styles.goToSpecialArrowButton}>
+            <button
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                window.open(locationUrl);
+              }}
+              className={styles.goToSpecialArrowButton}
+            >
               <MdOpenInNew size={20} style={{ color: "var(--secondary)" }} />
             </button>
             <p>Come raggiungerci</p>
@@ -219,7 +239,7 @@ const LocationSection = () => {
         </div>
         <div className={styles.mapContainer}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2874.793570456051!2d11.01097547535706!3d43.901541971091454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132af51c952e35ff%3A0x9f40d897e8d92b8e!2sVia%20Michelangelo%20Buonarroti%2C%203%2C%2051031%20Agliana%20PT!5e0!3m2!1sit!2sit!4v1700825573878!5m2!1sit!2sit"
+            src={locationUrl}
             width="100%"
             height="450"
             loading="lazy"
@@ -235,6 +255,7 @@ const LocationSection = () => {
 const ContactSection = () => {
   return (
     <div
+      id="contacts"
       className={styles.sectionContainerGreen}
       style={{ paddingTop: "2rem" }}
     >
@@ -246,19 +267,26 @@ const ContactSection = () => {
           Hai bisogno di informazioni o vuoi prenotare?
         </h3>
 
-        <div className={styles.iconTextContainerLeftAligned}>
-          <button className={styles.goToSpecialArrowButton}>
-            <FaMapMarkerAlt size={20} style={{ color: "var(--secondary)" }} />
-          </button>
-          <p>contatti@poliagliana.com</p>
-        </div>
+        <a
+          href="mailto: info@centromedicoagliana.com"
+          target="_blank"
+          className={styles.iconTextContainerLeftAligned}
+        >
+          <div className={styles.goToSpecialArrowButton}>
+            <FaMailBulk size={20} style={{ color: "var(--secondary)" }} />
+          </div>
+          <p>info@centromedicoagliana.com</p>
+        </a>
 
-        <div className={styles.iconTextContainerLeftAligned}>
-          <button className={styles.goToSpecialArrowButton}>
-            <MdOpenInNew size={20} style={{ color: "var(--secondary)" }} />
-          </button>
-          <p>331222675</p>
-        </div>
+        <a
+          href="tel: 0574027087"
+          className={styles.iconTextContainerLeftAligned}
+        >
+          <div className={styles.goToSpecialArrowButton}>
+            <FaPhone size={20} style={{ color: "var(--secondary)" }} />
+          </div>
+          <p>0574 027087</p>
+        </a>
       </div>
     </div>
   );
@@ -283,7 +311,11 @@ const FaqSection = () => {
     },
   ];
   return (
-    <div className={styles.sectionContainerBlue} style={{ paddingTop: "2rem" }}>
+    <div
+      id="faqs"
+      className={styles.sectionContainerBlue}
+      style={{ paddingTop: "2rem" }}
+    >
       <div className={styles.sectionHeading}>
         <h2 className={styles.sectionTitle + " " + bebasNeue.className}>FAQ</h2>
         <h3 className={styles.sectionSubtitle}>Hai qualche dubbio?</h3>

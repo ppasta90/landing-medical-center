@@ -60,13 +60,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.2rem;
+  gap: 0.5rem;
   color: #212529;
 }
 
 .iconTextContainerLeftAligned {
   @extend .iconTextContainer;
   justify-content: flex-start;
+  width: fit-content;
 }
 
 .goToSpecialArrowButton {
@@ -114,7 +115,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 18rem 0 5rem 0;
+  padding: 5rem 0 5rem 0;
 }
 
 .sectionContainerBlue {
