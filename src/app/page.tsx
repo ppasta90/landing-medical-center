@@ -120,13 +120,23 @@ const ServicesContainer = () => {
               />
             </div>
             <div className={styles.iconTextContainer}>
-              <button className={styles.goToSpecialArrowButton}>
+              <a
+                aria-label="scopri le specializzazioni"
+                style={{
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                }}
+                href="#specializations"
+                className={styles.goToSpecialArrowButton}
+              >
                 <FiArrowDownCircle
                   size={20}
                   style={{ color: "var(--secondary)" }}
                 />
-              </button>
-              <p>Scopri le specializzazioni</p>
+                <p>Scopri le specializzazioni</p>
+              </a>
             </div>
           </>
         )}
@@ -239,6 +249,7 @@ const LocationSection = () => {
         </div>
         <div className={styles.mapContainer}>
           <iframe
+            title="mappa"
             src={locationUrl}
             width="100%"
             height="450"
@@ -268,6 +279,7 @@ const ContactSection = () => {
         </h3>
 
         <a
+          aria-label="Scrivici una mail"
           href="mailto: info@centromedicoagliana.com"
           target="_blank"
           className={styles.iconTextContainerLeftAligned}
@@ -279,6 +291,7 @@ const ContactSection = () => {
         </a>
 
         <a
+          aria-label="Chiama il numero 0574027087"
           href="tel: 0574027087"
           className={styles.iconTextContainerLeftAligned}
         >
