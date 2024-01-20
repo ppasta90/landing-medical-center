@@ -26,10 +26,10 @@ const DrawerMenu = ({ toggleDrawer }: { toggleDrawer: () => void }) => {
 
       <ul className={styles.drawerItemsList}>
         <li>
-          <Link href="/chi-siamo">CHI SIAMO</Link>
+          <Link href="/specialisti">SPECIALISTI</Link>
         </li>
         <li>
-          <Link href="/specialisti">SPECIALISTI</Link>
+          <Link href="/chi-siamo">DOVE SIAMO</Link>
         </li>
         <li>
           <Link href="/contatti">CONTATTI</Link>
@@ -54,13 +54,16 @@ const Header: React.FC<HeaderProps> = ({ isOpen, toggleDrawer }) => {
           <nav>
             <ul>
               <li>
-                <Link href="#chi-siamo">CHI SIAMO</Link>
+                <Link href="#specializations">SPECIALISTI</Link>
               </li>
               <li>
-                <Link href="#specialisti">SPECIALISTI</Link>
+                <Link href="#where">DOVE SIAMO</Link>
               </li>
               <li>
-                <Link href="#contatti">CONTATTI</Link>
+                <Link href="#contacts">CONTATTI</Link>
+              </li>
+              <li>
+                <Link href="#faqs">FAQ</Link>
               </li>
             </ul>
           </nav>

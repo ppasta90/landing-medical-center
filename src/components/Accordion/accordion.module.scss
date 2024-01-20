@@ -15,12 +15,14 @@
     font-weight: 700;
     text-align: left;
     line-height: 1.25rem;
+    font-size: 1rem;
 }
 
 .chevron {
     color: white;
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+
 }
 
 .trigger[data-state='open'] > .chevron {
@@ -33,4 +35,5 @@
     padding: 0.5rem 0;
     color: var(--white);
     transition: max-height 0.3s ease-in-out;
+    font-size: 1rem;
 }
