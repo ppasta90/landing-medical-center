@@ -26,13 +26,19 @@ const DrawerMenu = ({ toggleDrawer }: { toggleDrawer: () => void }) => {
 
       <ul className={styles.drawerItemsList}>
         <li>
-          <Link href="/specialisti">SPECIALISTI</Link>
+          <Link aria-label="Vai alla sezione specialisti" href="/specialisti">
+            SPECIALISTI
+          </Link>
         </li>
         <li>
-          <Link href="/chi-siamo">DOVE SIAMO</Link>
+          <Link aria-label="Vai alla sezione dove siamo" href="/chi-siamo">
+            DOVE SIAMO
+          </Link>
         </li>
         <li>
-          <Link href="/contatti">CONTATTI</Link>
+          <Link aria-label="Vai alla sezione contatti" href="/contatti">
+            CONTATTI
+          </Link>
         </li>
       </ul>
     </div>
@@ -44,47 +50,61 @@ const Header: React.FC<HeaderProps> = ({ isOpen, toggleDrawer }) => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <Link href="/">
-          <Image src="/logo.svg" alt="Your Logo" width={120} height={120} />
-        </Link>
+      <div className={styles.innerContainer}>
+          <Link aria-label="logo Centro Medico Agliana" href="/">
+            <Image src="/logo.svg" alt="Your Logo" width={160} height={72} />
+          </Link>
+        {!isMobile && (
+          <div className={styles.nav}>
+            <nav>
+              <ul>
+                <li>
+                  <Link
+                    aria-label="Vai alla sezione specialisti"
+                    href="#specializations"
+                  >
+                    SPECIALISTI
+                  </Link>
+                </li>
+                <li>
+                  <Link aria-label="Vai alla sezione dove siamo " href="#where">
+                    DOVE SIAMO
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    aria-label="Vai alla sezione contatti "
+                    href="#contacts"
+                  >
+                    CONTATTI
+                  </Link>
+                </li>
+                <li>
+                  <Link aria-label="Vai alla sezione faq " href="#faqs">
+                    FAQ
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        )}
+        {isMobile && (
+          <div className={styles.mobileDrawer}>
+            <button className={styles.drawerToggle} onClick={toggleDrawer}>
+              <RxHamburgerMenu title="icona apri menu" size={30} />
+            </button>
+            <Drawer
+              size="100vw"
+              open={isOpen}
+              onClose={toggleDrawer}
+              direction="right"
+            >
+              <DrawerMenu toggleDrawer={toggleDrawer} />
+              {/* TODO drawer menu */}
+            </Drawer>
+          </div>
+        )}
       </div>
-      {!isMobile && (
-        <div className={styles.nav}>
-          <nav>
-            <ul>
-              <li>
-                <Link href="#specializations">SPECIALISTI</Link>
-              </li>
-              <li>
-                <Link href="#where">DOVE SIAMO</Link>
-              </li>
-              <li>
-                <Link href="#contacts">CONTATTI</Link>
-              </li>
-              <li>
-                <Link href="#faqs">FAQ</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      )}
-      {isMobile && (
-        <div className={styles.mobileDrawer}>
-          <button className={styles.drawerToggle} onClick={toggleDrawer}>
-            <RxHamburgerMenu title="icona apri menu" size={30} />
-          </button>
-          <Drawer
-            size="100vw"
-            open={isOpen}
-            onClose={toggleDrawer}
-            direction="right"
-          >
-            <DrawerMenu toggleDrawer={toggleDrawer} />
-            {/* TODO drawer menu */}
-          </Drawer>
-        </div>
-      )}
     </header>
   );
 };

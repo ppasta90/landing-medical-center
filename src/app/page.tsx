@@ -103,34 +103,47 @@ const ServicesContainer = () => {
               : styles.servicesContainerTitle
           }
         >
-          <p className={bebasNeue.className}>
-            Tutti i servizi per la tua salute in un unico luogo
+          <p style={{ color: "var(--secondary)"}} className={bebasNeue.className}>
+            CENTRO MEDICO AGLIANA{" "}
           </p>
-          <p>Il tuo benessere è il cuore del nostro lavoro</p>
+          <p style={{ maxWidth: "70%", fontSize: "1.25rem" }}>
+            Siamo uno studio privato che ospita professionisti operanti in varie
+            discipline mediche
+          </p>
         </div>
-        {!isTablet && (
-          <>
-            <div className={styles.ctaButtonContainer}>
-              <Button
-                onClick={() => {
-                  window.open("tel:0574027087");
-                }}
-                title="CHIAMA ORA"
-                type="primary"
+        {/* {!isTablet && ( */}
+        <>
+          <div className={styles.ctaButtonContainer}>
+            <Button
+              onClick={() => {
+                window.open("tel:0574027087");
+              }}
+              title="CHIAMA ORA PER INFORMAZIONI"
+              type="primary"
+            />
+          </div>
+          <div className={styles.iconTextContainer}>
+            <a
+              aria-label="scopri le specializzazioni"
+              style={{
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+              }}
+              href="#specializations"
+              className={styles.goToSpecialArrowButton}
+            >
+              <FiArrowDownCircle
+                size={20}
+                style={{ color: "var(--secondary)" }}
               />
-            </div>
-            <div className={styles.iconTextContainer}>
-              <button className={styles.goToSpecialArrowButton}>
-                <FiArrowDownCircle
-                  size={20}
-                  style={{ color: "var(--secondary)" }}
-                />
-              </button>
               <p>Scopri le specializzazioni</p>
-            </div>
-          </>
-        )}
-        <div
+            </a>
+          </div>
+        </>
+        {/*  )} */}
+        {/* <div
           className={
             isTablet ? styles.imageContainerTablet : styles.imageContainer
           }
@@ -148,7 +161,7 @@ const ServicesContainer = () => {
               maxWidth: "500px",
             }}
           />
-        </div>
+        </div> */}
       </div>
       {/* <div className={styles.servicesCardContainer}>
         <ServicesCard />
@@ -212,8 +225,8 @@ const LocationSection = () => {
             Dove siamo
           </h2>
           <h3 className={styles.sectionSubtitleLightBackground}>
-            Siamo ad Agliana, tra Prato e Pistoia, vicini all'uscita
-            dell'autostrada A11
+            Siamo ad Agliana, tra Prato e Pistoia, vicini all&apos;uscita
+            dell&apos;autostrada A11
           </h3>
           <div className={styles.iconTextContainerLeftAligned}>
             <button className={styles.goToSpecialArrowButton}>
@@ -239,6 +252,7 @@ const LocationSection = () => {
         </div>
         <div className={styles.mapContainer}>
           <iframe
+            title="mappa"
             src={locationUrl}
             width="100%"
             height="450"
@@ -268,17 +282,19 @@ const ContactSection = () => {
         </h3>
 
         <a
-          href="mailto: info@centromedicoagliana.com"
+          aria-label="Scrivici una mail"
+          href="mailto: info@centromedicoagliana.it"
           target="_blank"
           className={styles.iconTextContainerLeftAligned}
         >
           <div className={styles.goToSpecialArrowButton}>
             <FaMailBulk size={20} style={{ color: "var(--secondary)" }} />
           </div>
-          <p>info@centromedicoagliana.com</p>
+          <p>info@centromedicoagliana.it</p>
         </a>
 
         <a
+          aria-label="Chiama il numero 0574027087"
           href="tel: 0574027087"
           className={styles.iconTextContainerLeftAligned}
         >
