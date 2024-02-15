@@ -27,8 +27,8 @@ a {
   --main-title:#212529;
   --primary: #6BD697;
   --background: #CEF1DC;
-  --secondary: #0F083E;
-  --primary-text: #0F083E;
+  --secondary: #21137f;  /* alternative #13347f */
+  --primary-text: #21137f;
   --secondary-bg: white;
   --secondary-text: black;
   --focus-color: lightblue;
@@ -38,7 +38,7 @@ a {
   --main-title: white;
   --primary: #6BD697;
   --background: black;
-  --secondary: #0F083E;
+  --secondary: #21137f;
   --primary-text: white;
   --secondary-bg: white;
   --secondary-text: black;

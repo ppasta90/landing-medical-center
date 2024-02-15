@@ -9,6 +9,7 @@
   background-color: var(--background);
   position: relative;
   padding-top: 2rem;
+  padding-bottom: 5rem;
 
   p:first-child {
     color: #212529;
@@ -43,6 +44,7 @@
 
   .titleAndImageTablet {
     display: flex;
+    flex-direction: column;
   }
 
   @media screen and (min-width: 1280px) {

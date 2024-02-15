@@ -51,11 +51,9 @@ const Header: React.FC<HeaderProps> = ({ isOpen, toggleDrawer }) => {
   return (
     <header className={styles.header}>
       <div className={styles.innerContainer}>
-        <div className={styles.logo}>
           <Link aria-label="logo Centro Medico Agliana" href="/">
-            <Image src="/logo.svg" alt="Your Logo" width={120} height={120} />
+            <Image src="/logo.svg" alt="Your Logo" width={160} height={72} />
           </Link>
-        </div>
         {!isMobile && (
           <div className={styles.nav}>
             <nav>
